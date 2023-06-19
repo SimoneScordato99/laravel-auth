@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Modals\Project;
+use App\Models\Project;
 
 class ProjectController extends Controller
 {
@@ -11,13 +11,13 @@ class ProjectController extends Controller
 
         $progetti = Project::All();
 
-        return view('index', compact('progetti'));
+        return view('user.index', compact('progetti'));
     }
 
-    public function show($id){
+    // public function show($id){
 
-        $progetti = Project::find($id);
-        return view('show', compact('progetti'));
-    }
+    //     $mario = Project::find($id);
+    //     return view('user.show', compact('mario'));
+    // }
 }
 
