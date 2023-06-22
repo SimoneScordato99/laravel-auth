@@ -4,14 +4,14 @@
 <h1>ADMIN | INDEX</h1>
 
 <div class="d-flex flex-wrap">
-  @foreach($progetti as $elem)
+  @foreach($proge as $elem)
   <h2></h2>
   <div class="card" style="width: 18rem;">
     <img src="{{ asset('storage/' . $elem->img)}}" class="card-img-top" alt="xcane"> 
     <div class="card-body">
       <h5 class="card-title">{{$elem->title}}</h5>
       <p class="card-text">{{$elem->description}}</</p>
-      <a href="user/{{$elem->id}}" class="btn btn-primary">show</a>
+      <a href="admin/{{$elem->id}}" class="btn btn-primary">show</a>
       <a href="admin/{{$elem->id}}/edit" class="btn btn-secondary">modifica</a>
       <form action="{{route('admin.destroy', $elem)}}" method="POST" class="d-inline">
           @csrf

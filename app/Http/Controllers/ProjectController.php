@@ -15,9 +15,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $progetti = Project::All();
+        $proge = Project::All();
 
-        return view('admin.index', compact('progetti'));
+        return view('admin.index', compact('proge'));
     }
 
     /**
@@ -80,9 +80,9 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        $progetti = Project::find($id);
+        $proge = Project::find($id);
 
-        return view('admin.show', compact('progetti'));
+        return view('admin.show', compact('proge'));
     }
 
     /**
@@ -93,8 +93,8 @@ class ProjectController extends Controller
      */
     public function edit($id)
     {
-        $progetto = Project::find($id);
-        return view('admin.edit', compact('progetto'));
+        $proge = Project::find($id);
+        return view('admin.edit', compact('proge'));
     }
 
     /**
@@ -129,8 +129,8 @@ class ProjectController extends Controller
             $img_path = Storage::disk('public')->put('uploads', $request['img'] );
             $form_data['img'] = $img_path;
         }
-        $progetto = Project::find($id);
-        $progetto->update($form_data);
+        $proge = Project::find($id);
+        $proge->update($form_data);
 
         return redirect()->route('admin.index');
     }
@@ -143,8 +143,8 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        $progetto = Project::find($id);
-        $progetto->delete();
+        $proge = Project::find($id);
+        $proge->delete();
         return redirect()->route('admin.index');
     }
 }

@@ -4,7 +4,7 @@
 <h1>ADMIN | EDIT</h1>
 <h2 class="text-center">Modifica Il Post</h2>
 <div class="container">
-    <form action="{{route('admin.update', $progetto->id)}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('admin.update', $proge->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
