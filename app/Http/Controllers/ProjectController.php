@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Project;
 
 class ProjectController extends Controller
@@ -56,9 +57,16 @@ class ProjectController extends Controller
         );
         $form_data = $request->all();
 
+        if ($request->hasFile('img')){
+            $img_path = Storage::disk('public')->put('uploads', $request['img'] );
+            $form_data['img'] = $img_path;
+        }
+        
+
 
         $newPost = new Project();
         $newPost->fill($form_data);
+
         $newPost->save();
 
         return redirect()->route('admin.index');
@@ -117,6 +125,10 @@ class ProjectController extends Controller
         );
 
         $form_data = $request->all();
+        if ($request->hasFile('img')){
+            $img_path = Storage::disk('public')->put('uploads', $request['img'] );
+            $form_data['img'] = $img_path;
+        }
         $progetto = Project::find($id);
         $progetto->update($form_data);
 

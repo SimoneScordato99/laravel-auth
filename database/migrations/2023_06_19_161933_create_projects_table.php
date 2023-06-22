@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('title')->required();
             $table->text('description')->required();
-            $table->text('thumb')->nullable();
             $table->string('type')->nullable();
+            $table->string('img')->nullable();
             $table->timestamps();
         });
     }

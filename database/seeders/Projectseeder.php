@@ -25,7 +25,6 @@ class Projectseeder extends Seeder
             // $newProject->type = $elem['type'];
             $newProject->title = $faker->company();
             $newProject->description = $faker->company();
-            $newProject->thumb = $faker->company();
             $newProject->type = $faker->company();
             $newProject->save(); 
         }

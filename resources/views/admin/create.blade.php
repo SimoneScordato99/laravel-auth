@@ -4,7 +4,7 @@
 <h1>ADMIN | CREATE</h1>
 <h2 class="text-center">Crea Un Nuovo Post</h2>
 <div class="container">
-    <form action="{{route('admin.store')}}" method="POST">
+    <form action="{{route('admin.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="form-group">
@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
             <label for="fileimg" class="form-label">file immagine</label>
-            <input class="form-control" type="file" id="fileimg" name="thumb">
+            <input class="form-control" type="file" id="fileimg" name="img">
         </div>
         <div class="input-group mb-3 my-3">
             <label class="input-group-text" for="typeselect">Type</label>

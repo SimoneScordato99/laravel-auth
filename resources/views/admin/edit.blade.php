@@ -4,7 +4,7 @@
 <h1>ADMIN | EDIT</h1>
 <h2 class="text-center">Modifica Il Post</h2>
 <div class="container">
-    <form action="{{route('admin.update', $progetto->id)}}" method="POST">
+    <form action="{{route('admin.update', $progetto->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -24,7 +24,7 @@
         </div>
         <div class="form-group">
             <label for="fileimg" class="form-label">file immagine</label>
-            <input class="form-control" type="file" id="fileimg" name="thumb">
+            <input class="form-control" type="file" id="fileimg" name="img">
         </div>
         <div class="input-group mb-3 my-3">
             <label class="input-group-text" for="typeselect">Type</label>
